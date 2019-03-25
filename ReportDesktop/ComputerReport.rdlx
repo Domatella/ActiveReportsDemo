@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">Report1</dd:Name>
+	<Body>
+		<Height>2in</Height>
+		<ReportItems>
+			<CustomReportItem Name="BandedList1">
+				<Type>BandedList</Type>
+				<Top>0.125in</Top>
+				<Width>5.75in</Width>
+				<Height>1.25in</Height>
+				<ZIndex>1</ZIndex>
+				<CustomData>
+					<DataSetName>EmpSet</DataSetName>
+					<DataRowGroupings>
+						<DataGroupings>
+							<DataGrouping>
+								<Grouping Name="BandedList1_Group1">
+									<GroupExpressions>
+										<GroupExpression>=Fields!type.Value</GroupExpression>
+									</GroupExpressions>
+								</Grouping>
+								<dd:Container xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">
+									<ReportItems>
+										<Textbox Name="TextBox9">
+											<CanGrow>true</CanGrow>
+											<Height>0.25in</Height>
+											<Value>=First(Fields!type.Value)</Value>
+											<Style>
+												<BackgroundColor>Gainsboro</BackgroundColor>
+												<FontFamily>Arial</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<BorderStyle>
+													<Default>Dashed</Default>
+												</BorderStyle>
+											</Style>
+											<Width>5.75in</Width>
+											<ZIndex>1</ZIndex>
+										</Textbox>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<Height>0.5in</Height>
+											<Left>2.125in</Left>
+											<Value>=Sum(Fields!cost.Value)</Value>
+											<Style>
+												<FontFamily>Arial</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<Format>c</Format>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+											</Style>
+											<Width>3.625in</Width>
+											<ZIndex>1</ZIndex>
+										</Textbox>
+										<Textbox Name="TextBox4">
+											<CanGrow>true</CanGrow>
+											<Height>0.5in</Height>
+											<Value>Total:</Value>
+											<Style>
+												<FontFamily>Arial</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+											</Style>
+											<Width>2.125in</Width>
+											<ZIndex>2</ZIndex>
+										</Textbox>
+									</ReportItems>
+								</dd:Container>
+								<DataGroupings>
+									<DataGrouping>
+										<dd:Container xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">
+											<ReportItems>
+												<Textbox Name="TextBox3">
+													<CanGrow>true</CanGrow>
+													<Height>0.25in</Height>
+													<Value>=Fields!name.Value</Value>
+													<Style>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<BorderStyle>
+															<Default>Solid</Default>
+														</BorderStyle>
+													</Style>
+													<Width>2.1146in</Width>
+													<ZIndex>1</ZIndex>
+												</Textbox>
+												<Textbox Name="TextBox6">
+													<CanGrow>true</CanGrow>
+													<Height>0.25in</Height>
+													<Left>2.125in</Left>
+													<Value>=Fields!cost.Value</Value>
+													<Style>
+														<Format>c</Format>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<BorderStyle>
+															<Default>Solid</Default>
+														</BorderStyle>
+													</Style>
+													<Width>3.625in</Width>
+													<ZIndex>2</ZIndex>
+												</Textbox>
+											</ReportItems>
+										</dd:Container>
+									</DataGrouping>
+								</DataGroupings>
+							</DataGrouping>
+						</DataGroupings>
+					</DataRowGroupings>
+				</CustomData>
+				<DataElementName>BandedList1</DataElementName>
+				<BandedListConfig xmlns="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition/">
+	<HeaderBand>
+		<Height>0.25in</Height>
+		<Style>
+			<BackgroundColor>Inherit</BackgroundColor>
+		</Style>
+	</HeaderBand>
+	<Groups>
+		<Group Name="BandedList1_Group1">
+			<KeepTogether>true</KeepTogether>
+			<PreventOrphanedHeader>true</PreventOrphanedHeader>
+			<PreventOrphanedFooter>true</PreventOrphanedFooter>
+			<HeaderBand>
+				<Height>0.25in</Height>
+				<ReportItems>
+					<ReportItemReference Name="TextBox9" />
+				</ReportItems>
+				<Style>
+					<BackgroundColor>Inherit</BackgroundColor>
+				</Style>
+			</HeaderBand>
+			<FooterBand>
+				<Height>0.5in</Height>
+				<ReportItems>
+					<ReportItemReference Name="TextBox2" />
+					<ReportItemReference Name="TextBox4" />
+				</ReportItems>
+				<Style>
+					<BackgroundColor>Inherit</BackgroundColor>
+				</Style>
+				<PrintAtBottom>true</PrintAtBottom>
+			</FooterBand>
+			<Visibility>
+				<Hidden>False</Hidden>
+			</Visibility>
+		</Group>
+	</Groups>
+	<Details>
+		<Height>0.25in</Height>
+		<ReportItems>
+			<ReportItemReference Name="TextBox3" />
+			<ReportItemReference Name="TextBox6" />
+		</ReportItems>
+		<Style>
+			<BackgroundColor>Inherit</BackgroundColor>
+		</Style>
+	</Details>
+</BandedListConfig>
+			</CustomReportItem>
+			<Textbox Name="TextBox1">
+				<CanGrow>true</CanGrow>
+				<Height>0.375in</Height>
+				<Value>Computer types</Value>
+				<Style>
+					<BackgroundColor>Silver</BackgroundColor>
+					<Color>Black</Color>
+					<FontFamily>Arial</FontFamily>
+					<FontSize>14pt</FontSize>
+					<FontStyle>Italic</FontStyle>
+					<FontWeight>700</FontWeight>
+					<PaddingBottom>2pt</PaddingBottom>
+					<PaddingLeft>2pt</PaddingLeft>
+					<PaddingRight>2pt</PaddingRight>
+					<PaddingTop>2pt</PaddingTop>
+					<TextAlign>Center</TextAlign>
+					<BorderStyle>
+						<Default>Double</Default>
+					</BorderStyle>
+				</Style>
+				<Width>5.75in</Width>
+				<ZIndex>2</ZIndex>
+			</Textbox>
+		</ReportItems>
+	</Body>
+	<BottomMargin>1in</BottomMargin>
+	<LeftMargin>1in</LeftMargin>
+	<PageHeight>11.69in</PageHeight>
+	<PageWidth>8.27in</PageWidth>
+	<RightMargin>1in</RightMargin>
+	<TopMargin>1in</TopMargin>
+	<Width>5.75in</Width>
+	<DataSources>
+		<DataSource Name="EmpsSource">
+			<ConnectionProperties>
+				<ConnectString>initial catalog=TESTDB;integrated security=SSPI;data source=DP954;persist security info=False;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+				<IntegratedSecurity>true</IntegratedSecurity>
+			</ConnectionProperties>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="EmpSet">
+			<Fields>
+				<Field Name="EmloyeesID">
+					<DataField>EmloyeesID</DataField>
+				</Field>
+				<Field Name="name">
+					<DataField>name</DataField>
+				</Field>
+				<Field Name="cost">
+					<DataField>cost</DataField>
+				</Field>
+				<Field Name="type">
+					<DataField>type</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select emp.[EmloyeesID], emp.name, emp.cost, comp.name as type from ComputerTypes comp, Emloyees emp left join ComputerTypes on emp.[ComputerTypeID] = ComputerTypes.TypeID order by type</CommandText>
+				<DataSourceName>EmpsSource</DataSourceName>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>
